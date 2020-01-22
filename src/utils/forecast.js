@@ -12,7 +12,7 @@ const forecast = (lattitude, longitude, callback) => {
                 summary: body.currently.summary,
                 temperature: body.currently.temperature,
                 chanceOfRain: body.currently.precipProbability,
-                stringForm: body.currently.summary + ". Temperature: " + body.currently.temperature + "C. Chance of rain: " + body.currently.precipProbability
+                stringForm: body.currently.summary + ". Temperature: " + body.currently.temperature + "C (MIN " + body.daily.data[0].temperatureMin + "C - MAX " + body.daily.data[0].temperatureMax + "C). Chance of rain: " + body.currently.precipProbability
             })
         }
     })
