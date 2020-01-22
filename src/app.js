@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 const port = process.env.PORT || 3000
+const name = "Feanor306"
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -23,22 +24,22 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'The Dude'
+        name
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
-        name: 'The Dude'
+        name
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
-        name: 'The Dude',
-        message: "What????"
+        name,
+        message: "This will contain helpful information in the future!"
     })
 })
 
@@ -58,7 +59,7 @@ app.get('/weather', (req, res) => {
             res.send({
                 address: req.query.address,
                 location,
-                forecastData: JSON.stringify(forecastData)
+                forecastData: forecastData.stringForm//JSON.stringify(forecastData)
             })
         })
     })
@@ -79,15 +80,15 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req,res) => {
     res.render('404', {
         title: '404',
-        name: 'The Dude',
-        errorMessage: 'Help article not found'
+        name,
+        errorMessage: 'Help article not found!'
     })
 })
 
 app.get('*', (req,res) => {
     res.render('404', {
         title: '404',
-        name: 'The Dude',
+        name,
         errorMessage: 'Page not found'
     })
 })
