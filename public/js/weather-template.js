@@ -4,7 +4,10 @@ var skycons = new Skycons({"color": "#27b322"});
 
 const handleDataToday = (data) => {
     if (!data.data) return data;
-    weatherToday.innerHTML = ''
+    if($("#weather-today").hasClass('slick-initialized')){
+        $("#weather-today").slick('unslick')
+        $("#weather-today").empty()
+    }
 
     data.data.forEach((hour) => {
         let hd = {}
@@ -48,7 +51,10 @@ const handleDataToday = (data) => {
 
 const handleDataDays = (data) => {
     if (!data.data) return data;
-    weatherWeek.innerHTML = ''
+    if($("#weather-week").hasClass('slick-initialized')){
+        $("#weather-week").slick('unslick')
+        $("#weather-week").empty()
+    }
 
     data.data.forEach((day) => {
         let dd = {}
