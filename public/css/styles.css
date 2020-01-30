@@ -1,10 +1,10 @@
 body {
-    color: #333333;
+    color: #666666;
     font-family: arial;
-    max-width: 650px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 16px;
-    
+    background: #dddddd;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -27,18 +27,23 @@ header {
 }
 
 h1 {
-    font-size:64px;
+    font-size:36px;
     margin-bottom: 16px;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+canvas {
+    width: 64px;
+    height: 64px;
 }
 
 header a {
     color: #888888;
     margin-right: 16px;
     text-decoration: none;
-}
-
-.portrait {
-    width: 250px;
 }
 
 input {
@@ -52,4 +57,133 @@ button {
     background: #888888;
     color: white;
     padding: 8px;
+}
+
+#weather-week {
+    margin-top: 1em;
+}
+
+#weather-week .weather-view{
+    min-height: 12.63rem;
+}
+
+#weather-today .weather-view{
+    min-height: 14.44rem;
+}
+
+.slick-arrow {
+    color: #22aa33 !important;
+}
+
+.weather-view {
+    width: 12rem;
+    padding: .6rem;
+    border: 1px solid #333333;
+    margin-right: .2rem;
+    float: left;
+    background: white;
+}
+
+.weather-view__title, .weather-view__time {
+    font-weight: 600;
+    padding-bottom: .3rem;
+    text-align: center;
+    border-bottom: 1px solid #333333;
+}
+
+.weather-view__time {
+    padding-top: .3rem;
+}
+
+.weather-view__text, 
+.weather-view__temp,
+.weather-view__rain,
+.weather-view__wind {
+    width: 100%;
+    position: relative;
+    clear: both;
+}
+.weather-view__rain,
+.weather-view__wind {
+    font-size: .9rem;
+}
+
+.wvtx__text {
+    font-size: .8rem;
+    font-weight: 300;
+    width: calc(100% - 5rem);
+    padding: .3rem;
+    margin-right: .2rem;
+    line-height: 1.2rem;
+    float: left;
+}
+
+.wvtx__icon {
+    width: 4rem;
+    height: 4rem;
+    float: right;
+}
+
+.wvt__min {
+    font-weight: 300;
+    font-size: .6rem;
+    position: absolute;
+    color: gray;
+    left: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wvt__max {
+    font-weight: 300;
+    font-size: .6rem;
+    position: absolute;
+    color: gray;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wvt__temp {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .3rem 0 .6rem 0;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.wvtr__chance {
+    width: calc(100% - .6rem);
+    padding-left: .6rem;
+    float: left;
+    text-align: left;
+    padding: .3rem 0;
+}
+/*
+.wvtr__mm {
+    width: 50%;
+    float: right;
+    text-align: center;
+    padding: .3rem 0;
+}
+*/
+.wvtw__wind {
+    width: calc(100% - 2.7rem);
+    padding-left: .6rem;
+    text-align: left;
+    float: left;
+    padding: .3rem 0;
+}
+
+.wvtw__windMax {}
+
+.wvtw__arrow {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    float: right;
+    text-align: center;
+    line-height: 2rem;
 }

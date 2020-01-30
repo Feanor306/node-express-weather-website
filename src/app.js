@@ -38,8 +38,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
-        name,
-        message: "This will contain helpful information in the future!"
+        name
     })
 })
 
@@ -57,9 +56,13 @@ app.get('/weather', (req, res) => {
             if(error) return res.send({ error })
             
             res.send({
-                address: req.query.address,
+                // CLEAN UP LATER
+                //address: req.query.address,
                 location,
-                forecastData: forecastData.stringForm//JSON.stringify(forecastData)
+                //now : forecastData.now,
+                hours: forecastData.hours,
+                days: forecastData.days,
+                //forecastData: forecastData.stringForm//JSON.stringify(forecastData)
             })
         })
     })
