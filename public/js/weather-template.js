@@ -4,6 +4,7 @@ var skycons = new Skycons({"color": "#27b322"});
 
 const handleDataToday = (data) => {
     if (!data.data) return data;
+    weatherToday.innerHTML = ''
 
     data.data.forEach((hour) => {
         let hd = {}
@@ -47,6 +48,7 @@ const handleDataToday = (data) => {
 
 const handleDataDays = (data) => {
     if (!data.data) return data;
+    weatherWeek.innerHTML = ''
 
     data.data.forEach((day) => {
         let dd = {}
